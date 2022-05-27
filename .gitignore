@@ -1,0 +1,10 @@
+# OSX
+.DS_Store
+coverage
+
+# node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+src/__tests__/__snapshots__/*.snap
