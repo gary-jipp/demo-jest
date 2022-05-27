@@ -4,6 +4,7 @@
 
 - Jest is a Test Runner maintained by FaceBook
 - Jest looks a lot like Mocha
+- test `add.js`
 - `describe` (optional) and `it` / `test`
 - Jest has built in assertions. No 3rd party library needed
 - Lots of assertions available
