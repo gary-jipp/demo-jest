@@ -1,5 +1,5 @@
 const fetchUser = require ('../fetchUser');
-jest.mock("helper/fetchUser");  // Mock the interface instead of fetch
+jest.mock("../fetchUser");  // Mock the interface instead of fetch
 
 it('fetchUser() returns null on invalid user', async () => {
   // console.log(fetchUser);
