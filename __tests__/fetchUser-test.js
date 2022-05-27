@@ -1,4 +1,4 @@
-import fetchUser from 'helper/fetchUser';
+const fetchUser = require ('../fetchUser');
 jest.mock("helper/fetchUser");  // Mock the interface instead of fetch
 
 it('fetchUser() returns null on invalid user', async () => {
