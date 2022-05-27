@@ -1,21 +1,29 @@
 # React Native Testing
 
-## Jest Testing - Intro
+## Jest Testing - Mock Fetch
 
-- Jest is a Test Runner maintained by FaceBook
-- Jest looks a lot like Mocha
-- test `add.js`
-- `describe` (optional) and `it` / `test`
-- Jest has built in assertions. No 3rd party library needed
-- Lots of assertions available
-- can run in watch mode & verbose (shows individual tests)
+### Testing helper function
 
-### Testing simple functions
+- Create a new test: `fetchUser-test`
+- can `skip` previous tests. `only` also works
+- `fetchUser-test` fails!
+- fetch not defined, since using node not browser
+- need to mock fetch
+- 2 reasons:
+  - 1.  Doesn't exist (but we can fix that with `node-fetch` module)
+  - 2.  Test depends on external server (more important)
+- `npm install --save-dev jest-fetch-mock`
+- Optionally add to `jestSetup.js` & `package.json`
+- or just require it in our tests
+- `require("jest-fetch-mock").enableMocks();`
+- Note: fetch returns a JSON String, not object or array
+- coverage report
+- add extra test to cover 100%
+- can enable jest watch mode
 
-- `add` and `sum` tests, `sum` depends on `add`
-- what happens if add doesn't run on this environment.
-- need to mock `add`
+### Mock interfaces rather than specific implementation
 
-### `@types/jest` is useful
-
-`npm install --save-dev @types/jest`
+- mock fetchUser itself, rather than fetch
+- `fetchUser-test` vs `fetchUser-impl-test`
+- `mockResponseOnce` is unique to fetch mock module
+- need to use `mockResolvedValue` for `fetchUser()`
